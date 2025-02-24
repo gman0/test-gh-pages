@@ -1,0 +1,7 @@
+[book]
+title = "Example title"
+description = "Example description"
+authors = ["Example authors"]
+
+[build]
+build-dir = "../docs"

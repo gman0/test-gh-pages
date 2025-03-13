@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="
+  Pre-requisites
+  #
+
+In this chapter we&rsquo;ll set up our workshop-dedicated development environment.
+
+  Cloning the workshop repo
+  #
+
+Start by cloning the git repository we&rsquo;ll refer to throughout the workshop, and will be the place for the binaries, scripts and kubeconfigs we will create as we move forward.
+git clone git@github.com:mjudeikis/kcp-contrib.git
+Now, let&rsquo;s see what&rsquo;s inside.
+
+00-prerequisites/
+01-deploy-kcp/
+02-explore-workspaces/
+03-dynamic-providers/
+clean-all.sh
+
+Notice the exercises in directories &lt;Sequence number&gt;-&lt;Exercise name&gt;. These are to be visited in sequence, and to complete one, all previous exercises need to be completed first to bring the system into the desired state. While it&rsquo;s best if you try to follow the tasks by yourself, if you ever get stuck, you can finish an exercise by running the scripts inside the respective exercise directory.">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="http://localhost:1313/docs/1-prerequisites/">
+  <meta property="og:site_name" content="My New Hugo Site">
+  <meta property="og:title" content="Setting up your development environment">
+  <meta property="og:description" content="Pre-requisites # In this chapter we’ll set up our workshop-dedicated development environment.
+Cloning the workshop repo # Start by cloning the git repository we’ll refer to throughout the workshop, and will be the place for the binaries, scripts and kubeconfigs we will create as we move forward.
+git clone git@github.com:mjudeikis/kcp-contrib.git Now, let’s see what’s inside.
+00-prerequisites/ 01-deploy-kcp/ 02-explore-workspaces/ 03-dynamic-providers/ clean-all.sh Notice the exercises in directories &lt;Sequence number&gt;-&lt;Exercise name&gt;. These are to be visited in sequence, and to complete one, all previous exercises need to be completed first to bring the system into the desired state. While it’s best if you try to follow the tasks by yourself, if you ever get stuck, you can finish an exercise by running the scripts inside the respective exercise directory.">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="docs">
+<title>Setting up your development environment | My New Hugo Site</title>
+<link rel="icon" href="/favicon.png" >
+<link rel="manifest" href="/manifest.json">
+<link rel="canonical" href="http://localhost:1313/docs/1-prerequisites/">
+<link rel="stylesheet" href="/book.min.434035e7885c7f5d12818bd9f111cf1a0925c6fb78382667381c3d5eda3fb4f1.css" integrity="sha256-Q0A154hcf10SgYvZ8RHPGgklxvt4OCZnOBw9Xto/tPE=" crossorigin="anonymous">
+  <script defer src="/fuse.min.js"></script>
+  <script defer src="/en.search.min.0ab2ec0750de969eadf24d660d910b2b5e966689e641298dd5b7061556af9e87.js" integrity="sha256-CrLsB1Delp6t8k1mDZELK16WZonmQSmN1bcGFVavnoc=" crossorigin="anonymous"></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  
+</head>
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/"><img src="/logo.svg" alt="Logo" class="book-icon" /><span>My New Hugo Site</span>
+  </a>
+</h2>
+
+
+<div class="book-search hidden">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+<script>document.querySelector(".book-search").classList.remove("hidden")</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/2-deploy-kcp/" class="">Deploying kcp</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/3-explore-workspaces/" class="">Exploring workspaces</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/1-prerequisites/" class="active">Setting up your development environment</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <h3>Setting up your development environment</h3>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#cloning-the-workshop-repo">Cloning the workshop repo</a></li>
+    <li><a href="#get-your-bins">Get your bins</a>
+      <ul>
+        <li><a href="#high-five">High-five!</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown book-article"><h1 id="pre-requisites">
+  Pre-requisites
+  <a class="anchor" href="#pre-requisites">#</a>
+</h1>
+<p>In this chapter we&rsquo;ll set up our workshop-dedicated development environment.</p>
+<h2 id="cloning-the-workshop-repo">
+  Cloning the workshop repo
+  <a class="anchor" href="#cloning-the-workshop-repo">#</a>
+</h2>
+<p>Start by cloning the git repository we&rsquo;ll refer to throughout the workshop, and will be the place for the binaries, scripts and kubeconfigs we will create as we move forward.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>git clone git@github.com:mjudeikis/kcp-contrib.git
+</span></span></code></pre></div><p>Now, let&rsquo;s see what&rsquo;s inside.</p>
+<ul>
+<li><code>00-prerequisites/</code></li>
+<li><code>01-deploy-kcp/</code></li>
+<li><code>02-explore-workspaces/</code></li>
+<li><code>03-dynamic-providers/</code></li>
+<li><code>clean-all.sh</code></li>
+</ul>
+<p>Notice the exercises in directories <code>&lt;Sequence number&gt;-&lt;Exercise name&gt;</code>. These are to be visited in sequence, and to complete one, all previous exercises need to be completed first to bring the system into the desired state. While it&rsquo;s best if you try to follow the tasks by yourself, if you ever get stuck, you can finish an exercise by running the scripts inside the respective exercise directory.</p>
+<p>Also take a note of the <code>clean-all.sh</code> script. If you ever get stuck and want to reset, run it and it will clean up and stop processes and containers used in the exercises.</p>
+<h2 id="get-your-bins">
+  Get your bins
+  <a class="anchor" href="#get-your-bins">#</a>
+</h2>
+<p>This one is easy. During the workshop we will make use of these programs:</p>
+<ul>
+<li><a href="https://github.com/kcp-dev/kcp/releases/latest">kcp</a>,</li>
+<li>kcp&rsquo;s <a href="https://github.com/kcp-dev/api-syncagent/releases/latest">api-syncagent</a>,</li>
+<li><a href="https://github.com/kubernetes-sigs/kind/releases/latest">kind</a>,</li>
+<li><a href="https://kubernetes.io/docs/tasks/tools/">kubectl</a>,</li>
+<li>and, <a href="https://krew.sigs.k8s.io/docs/user-guide/setup/install/">kubectl-krew</a>.</li>
+</ul>
+<p>You may visit the links, download and extract the respective binaries to a new directory called <code>bin/</code> in the workshop&rsquo;s root (e.g., <code>$WORKSHOP/bin/kubectl</code>). If you already have some of these installed and available in your <code>$PATH</code>, you may skip them&ndash;just make sure they are up-to-date.</p>
+<p>Alternatively, we&rsquo;ve prepared a script that does just that:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>00-prerequisites/01-install.sh
+</span></span></code></pre></div><p>If you&rsquo;re going the manual way, please make sure the file names are stripped of OS and arch names they may contain (e.g. <code>mv kubectl-krew-linux_amd64 kubectl-krew</code>), as we&rsquo;ll refer to them using their system-agnostic names later on.</p>
+<p>And that&rsquo;s it!</p>
+<h3 id="high-five">
+  High-five!
+  <a class="anchor" href="#high-five">#</a>
+</h3>
+<p>Done already? High-five! Check-in your completion with:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>00-prerequisites/99-highfive.sh
+</span></span></code></pre></div><p>If there were no errors, you may continue with the next exercise: <a href="/01-deploy-kcp/">Deploying kcp</a>.</p>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+
+
+</div>
+
+
+
+  <script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){if(window.getSelection().toString())return;e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
+
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#cloning-the-workshop-repo">Cloning the workshop repo</a></li>
+    <li><a href="#get-your-bins">Get your bins</a>
+      <ul>
+        <li><a href="#high-five">High-five!</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

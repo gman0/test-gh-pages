@@ -1,0 +1,3 @@
+.markdown blockquote {
+    border-inline-start: .25rem solid var(--hint-color-warning);
+}

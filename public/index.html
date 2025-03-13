@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+<head>
+	<meta name="generator" content="Hugo 0.145.0">
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="
+  KubeCon 2025 London: kcp workshop
+  #
+
+We wish to welcome you to KubeCon 2025 London, at kcp&rsquo;s workshop titled Exploring Multi-Tenant Kubernetes APIs and Controllers with kcp!
+While Kubernetes transformed container orchestration, creating multi-tenant platforms remains a significant challenge. kcp goes beyond DevOps and workload management, to reimagine how we deliver true SaaS experiences for platform engineers. Think workspaces and multi-tenancy, not namespaces in a singular cluster. Think sharding and horizontal scaling, not overly large and hard to maintain deployments. With novel approaches to well-established building blocks in Kubernetes API-Machinery, this CNCF sandbox project gives engineers a framework to host and consume any kind of API they need to support their platforms.">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="http://localhost/">
+  <meta property="og:site_name" content="kcp @ Kubecon 2025 London">
+  <meta property="og:title" content="Introduction">
+  <meta property="og:description" content="KubeCon 2025 London: kcp workshop # We wish to welcome you to KubeCon 2025 London, at kcp’s workshop titled Exploring Multi-Tenant Kubernetes APIs and Controllers with kcp!
+While Kubernetes transformed container orchestration, creating multi-tenant platforms remains a significant challenge. kcp goes beyond DevOps and workload management, to reimagine how we deliver true SaaS experiences for platform engineers. Think workspaces and multi-tenancy, not namespaces in a singular cluster. Think sharding and horizontal scaling, not overly large and hard to maintain deployments. With novel approaches to well-established building blocks in Kubernetes API-Machinery, this CNCF sandbox project gives engineers a framework to host and consume any kind of API they need to support their platforms.">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="website">
+<title>Introduction | kcp @ Kubecon 2025 London</title>
+<link rel="icon" href="/favicon.png" >
+<link rel="manifest" href="/manifest.json">
+<link rel="canonical" href="http://localhost/">
+<link rel="stylesheet" href="/book.min.434035e7885c7f5d12818bd9f111cf1a0925c6fb78382667381c3d5eda3fb4f1.css" integrity="sha256-Q0A154hcf10SgYvZ8RHPGgklxvt4OCZnOBw9Xto/tPE=" crossorigin="anonymous">
+  <script defer src="/fuse.min.js"></script>
+  <script defer src="/en.search.min.4bff042756c61d32436b7c73a5e66109836e4c4410210cb96ce108d550ad27b5.js" integrity="sha256-S/8EJ1bGHTJDa3xzpeZhCYNuTEQQIQy5bOEI1VCtJ7U=" crossorigin="anonymous"></script>
+<link rel="alternate" type="application/rss+xml" href="http://localhost/index.xml" title="kcp @ Kubecon 2025 London" />
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  
+</head>
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/"><img src="/logo.svg" alt="Logo" class="book-icon" /><span>kcp @ Kubecon 2025 London</span>
+  </a>
+</h2>
+
+
+<div class="book-search hidden">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+<script>document.querySelector(".book-search").classList.remove("hidden")</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/00-prerequisites/" class="">00: Setting up your development environment</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/01-deploy-kcp/" class="">01: Deploying kcp</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/02-explore-workspaces/" class="">02: Exploring workspaces</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <h3>Introduction</h3>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#session-outline">Session outline</a></li>
+    <li><a href="#before-we-begin">Before we begin</a></li>
+    <li><a href="#starting-out">Starting out</a></li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown book-article"><h1 id="kubecon-2025-london-kcp-workshop">
+  KubeCon 2025 London: kcp workshop
+  <a class="anchor" href="#kubecon-2025-london-kcp-workshop">#</a>
+</h1>
+<p>We wish to welcome you to KubeCon 2025 London, at kcp&rsquo;s workshop titled <em>Exploring Multi-Tenant Kubernetes APIs and Controllers with kcp!</em></p>
+<p>While Kubernetes transformed container orchestration, creating multi-tenant platforms remains a significant challenge. kcp goes beyond DevOps and workload management, to reimagine how we deliver true SaaS experiences for platform engineers. Think workspaces and multi-tenancy, not namespaces in a singular cluster. Think sharding and horizontal scaling, not overly large and hard to maintain deployments. With novel approaches to well-established building blocks in Kubernetes API-Machinery, this CNCF sandbox project gives engineers a framework to host and consume any kind of API they need to support their platforms.</p>
+<p>In this hands-on workshop, you will learn how to extend Kubernetes with kcp, build APIs, and design controllers to tackle multi-tenancy challenges. By exploring real-world scenarios like DBaaS across clusters, you will gain practical skills to create scalable, multi-tenant platforms for their Kubernetes environments.</p>
+<ul>
+<li><a href="https://www.kcp.io/">www.kcp.io</a></li>
+<li><a href="https://github.com/kcp-dev/kcp">github.com/kcp-dev/kcp</a></li>
+</ul>
+<h2 id="session-outline">
+  Session outline
+  <a class="anchor" href="#session-outline">#</a>
+</h2>
+<ol>
+<li><strong>Introduction.</strong> Together we&rsquo;ll see what does SaaS mean in Kubernetes, and how kcp plays a key role in enabling platform engineers and developers to build such SaaS platforms.</li>
+<li><strong>Exploration.</strong> We’ll get familiar writing kcp-aware code.</li>
+<li><strong>Demonstration.</strong> We’ll walk through a practical example and guide you through the prepared exercises.</li>
+<li><strong>Execution.</strong> Together, we’ll put everything we’ve learnt into action and build a tiny DBaaS platform—right on your PC!</li>
+</ol>
+<p>The examples will touch on hosting and consuming SaaS-like APIs we&rsquo;ll create during the session: self-servicing databases to be used in a web-app platform.</p>
+<h2 id="before-we-begin">
+  Before we begin
+  <a class="anchor" href="#before-we-begin">#</a>
+</h2>
+<p>Before we begin, we needed to make a few assumptions about your PC and its environment:</p>
+<ul>
+<li>Your PC is running recent <strong>Linux with systemd</strong> or <strong>MacOS</strong>, with <strong>amd64</strong> or <strong>arm64</strong> architecture.</li>
+<li>We are also expecting you have installed <a href="https://www.docker.com/">Docker</a> or <a href="https://podman.io/">podman</a>, and <a href="https://git-scm.com/">git</a>; if not, please do it now.</li>
+</ul>
+<p>All the tools and services we&rsquo;ll present during this workshop are local, don&rsquo;t require super-user privileges, and won&rsquo;t make permament changes to your system.</p>
+<h2 id="starting-out">
+  Starting out
+  <a class="anchor" href="#starting-out">#</a>
+</h2>
+<p>Once ready, start by heading over to the first warm-up exercise: <a href="./00-prerequisites/README.md">Installing pre-requisites</a>.</p>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+
+
+</div>
+
+
+
+  <script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){if(window.getSelection().toString())return;e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
+
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#session-outline">Session outline</a></li>
+    <li><a href="#before-we-begin">Before we begin</a></li>
+    <li><a href="#starting-out">Starting out</a></li>
+  </ul>
+</nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

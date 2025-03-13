@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="
+  KCP Workshop
+  #
+
+
+  Description
+  #
+
+While Kubernetes transformed container orchestration, creating multi-tenant platforms remains a significant challenge. kcp goes beyond DevOps and workload management, to reimagine how we deliver true SaaS experiences for platform engineers. Think workspaces and multi-tenancy, not namespaces in a singular cluster. Think sharding and horizontal scaling, not overly large and hard to maintain deployments. With novel approaches to well-established building blocks in Kubernetes API-Machinery, this CNCF sandbox project gives engineers a framework to host and consume any kind of API they need to support their platforms.">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="http://localhost:1313/readme/">
+  <meta property="og:site_name" content="My New Hugo Site">
+  <meta property="og:title" content="My New Hugo Site">
+  <meta property="og:description" content="KCP Workshop # Description # While Kubernetes transformed container orchestration, creating multi-tenant platforms remains a significant challenge. kcp goes beyond DevOps and workload management, to reimagine how we deliver true SaaS experiences for platform engineers. Think workspaces and multi-tenancy, not namespaces in a singular cluster. Think sharding and horizontal scaling, not overly large and hard to maintain deployments. With novel approaches to well-established building blocks in Kubernetes API-Machinery, this CNCF sandbox project gives engineers a framework to host and consume any kind of API they need to support their platforms.">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+<title>Readme | My New Hugo Site</title>
+<link rel="icon" href="/favicon.png" >
+<link rel="manifest" href="/manifest.json">
+<link rel="canonical" href="http://localhost:1313/readme/">
+<link rel="stylesheet" href="/book.min.6c8b9d2a1fc95075ed7da46ca81060b39add8fff6741ac51259f768929281e2c.css" integrity="sha256-bIudKh/JUHXtfaRsqBBgs5rdj/9nQaxRJZ92iSkoHiw=" crossorigin="anonymous">
+  <script defer src="/fuse.min.js"></script>
+  <script defer src="/en.search.min.fde129d0c5ff61f655481fcdfde6c5e87db12693f114934cc36ebb78094e95ef.js" integrity="sha256-/eEp0MX/YfZVSB/N/ebF6H2xJpPxFJNMw267eAlOle8=" crossorigin="anonymous"></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  
+</head>
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/"><span>My New Hugo Site</span>
+  </a>
+</h2>
+
+
+<div class="book-search hidden">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+<script>document.querySelector(".book-search").classList.remove("hidden")</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/hello/" class="">Hello</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <h3>Readme</h3>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#description">Description</a></li>
+    <li><a href="#session-outline">Session outline</a></li>
+    <li><a href="#prerequisites">Prerequisites</a></li>
+    <li><a href="#parts">Parts</a></li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown book-article"><h1 id="kcp-workshop">
+  KCP Workshop
+  <a class="anchor" href="#kcp-workshop">#</a>
+</h1>
+<h2 id="description">
+  Description
+  <a class="anchor" href="#description">#</a>
+</h2>
+<p>While Kubernetes transformed container orchestration, creating multi-tenant platforms remains a significant challenge. kcp goes beyond DevOps and workload management, to reimagine how we deliver true SaaS experiences for platform engineers. Think workspaces and multi-tenancy, not namespaces in a singular cluster. Think sharding and horizontal scaling, not overly large and hard to maintain deployments. With novel approaches to well-established building blocks in Kubernetes API-Machinery, this CNCF sandbox project gives engineers a framework to host and consume any kind of API they need to support their platforms.</p>
+<p>In this hands-on workshop, participants will learn how to extend Kubernetes with KCP, build APIs, and design controllers to tackle multi-tenancy challenges. By exploring real-world scenarios like DBaaS across clusters, attendees will gain practical skills to create scalable, multi-tenant platforms for their Kubernetes environments.
+While presenting this topic in the previous couple KubeCons we got full-room attendance. However, we discovered that a 35-minute presentation to present quite complicated kcp as a framework is a challenge. One of the feedbacks we received from participants is that a workshop, covering these things in detail would be very much desired. This is a follow-up from previous sessions to deliver on the promise.</p>
+<h2 id="session-outline">
+  Session outline
+  <a class="anchor" href="#session-outline">#</a>
+</h2>
+<ol>
+<li>Introduction to SaaS-in-Kubernetes topic and how kcp is key element in enabling platform engineers and developers to build such SaaS platforms</li>
+<li>Familiarize attendees with writing kcp-aware code</li>
+<li>describe a practical example we&rsquo;ll help attendees create during the session</li>
+<li>Work together and implement the demo.</li>
+</ol>
+<p>The example would touch on hosting and consuming SaaS-like APIs we&rsquo;ll create during the session: self-servicing databases to be used in a web-app platform.</p>
+<h2 id="prerequisites">
+  Prerequisites
+  <a class="anchor" href="#prerequisites">#</a>
+</h2>
+<p>All these will be covered in the individual parts of the workshop, when we need them.</p>
+<ul>
+<li>Basic knowledge of Kubernetes</li>
+<li>Kind cluster locally installed</li>
+<li>kubectl installed</li>
+<li>krew installed</li>
+<li>helm installed</li>
+<li>psql installed (TODO how to install)</li>
+</ul>
+<h2 id="parts">
+  Parts
+  <a class="anchor" href="#parts">#</a>
+</h2>
+<ul>
+<li>
+<p><a href="./1-deploy-kcp-easy-way/README.md">Part 1 - Start kcp</a>
+In this part we gonna start kcp binary and see how it works.</p>
+</li>
+<li>
+<p><a href="./2-explore-workspaces/README.md">Part 2 - Explore the workspaces</a>
+In this part we gonna explore the workspaces and see how they work and how to use them</p>
+</li>
+</ul>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+
+
+</div>
+
+
+
+  <script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){if(window.getSelection().toString())return;e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
+
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#description">Description</a></li>
+    <li><a href="#session-outline">Session outline</a></li>
+    <li><a href="#prerequisites">Prerequisites</a></li>
+    <li><a href="#parts">Parts</a></li>
+  </ul>
+</nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

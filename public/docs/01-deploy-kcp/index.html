@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="
+  Deploy kcp
+  #
+
+kcp may be deployed via a Helm chart, an operator, or as a standalone process running on the host. Each of them has its uses as well as advantages and disadvantages. While the most preferable way to deploy kcp is using its dedicated operator, for the sake of simplicity, we&rsquo;ve taken the liberty of making the choice for you :) .
+
+  Starting kcp as a standalone process
+  #
+
+
+
+
+
+Attention: during these exercises, we&rsquo;ll be making heavy use of environment variables. We will be switching back and forth between clusters, as well as needing access to the binaries we&rsquo;ve set up in the previous chapter. Whenever you see this block, it means we are switching an environment. Make sure you cd into the workshop git repo, and copy-paste the commands to your terminal. Let&rsquo;s give it a try!">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="http://localhost/docs/01-deploy-kcp/">
+  <meta property="og:site_name" content="kcp @ Kubecon 2025 London">
+  <meta property="og:title" content="01: Deploying kcp">
+  <meta property="og:description" content="Deploy kcp # kcp may be deployed via a Helm chart, an operator, or as a standalone process running on the host. Each of them has its uses as well as advantages and disadvantages. While the most preferable way to deploy kcp is using its dedicated operator, for the sake of simplicity, we’ve taken the liberty of making the choice for you :) .
+Starting kcp as a standalone process # Attention: during these exercises, we’ll be making heavy use of environment variables. We will be switching back and forth between clusters, as well as needing access to the binaries we’ve set up in the previous chapter. Whenever you see this block, it means we are switching an environment. Make sure you cd into the workshop git repo, and copy-paste the commands to your terminal. Let’s give it a try!">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="docs">
+<title>01: Deploying kcp | kcp @ Kubecon 2025 London</title>
+<link rel="icon" href="/favicon.png" >
+<link rel="manifest" href="/manifest.json">
+<link rel="canonical" href="http://localhost/docs/01-deploy-kcp/">
+<link rel="stylesheet" href="/book.min.434035e7885c7f5d12818bd9f111cf1a0925c6fb78382667381c3d5eda3fb4f1.css" integrity="sha256-Q0A154hcf10SgYvZ8RHPGgklxvt4OCZnOBw9Xto/tPE=" crossorigin="anonymous">
+  <script defer src="/fuse.min.js"></script>
+  <script defer src="/en.search.min.4bff042756c61d32436b7c73a5e66109836e4c4410210cb96ce108d550ad27b5.js" integrity="sha256-S/8EJ1bGHTJDa3xzpeZhCYNuTEQQIQy5bOEI1VCtJ7U=" crossorigin="anonymous"></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  
+</head>
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/"><img src="/logo.svg" alt="Logo" class="book-icon" /><span>kcp @ Kubecon 2025 London</span>
+  </a>
+</h2>
+
+
+<div class="book-search hidden">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+<script>document.querySelector(".book-search").classList.remove("hidden")</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/00-prerequisites/" class="">00: Setting up your development environment</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/01-deploy-kcp/" class="active">01: Deploying kcp</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/02-explore-workspaces/" class="">02: Exploring workspaces</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <h3>01: Deploying kcp</h3>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#starting-kcp-as-a-standalone-process">Starting kcp as a standalone process</a></li>
+    <li><a href="#high-five-">High-five! 🚀🚀🚀</a>
+      <ul>
+        <li><a href="#cheat-sheet">Cheat-sheet</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown book-article"><h1 id="deploy-kcp">
+  Deploy kcp
+  <a class="anchor" href="#deploy-kcp">#</a>
+</h1>
+<p>kcp may be deployed via a <a href="https://github.com/kcp-dev/helm-charts">Helm chart</a>, an <a href="https://github.com/kcp-dev/helm-charts">operator</a>, or as a standalone process running on the host. Each of them has its uses as well as advantages and disadvantages. While the most preferable way to deploy kcp is using its dedicated operator, for the sake of simplicity, we&rsquo;ve taken the liberty of making the choice for you :) .</p>
+<h2 id="starting-kcp-as-a-standalone-process">
+  Starting kcp as a standalone process
+  <a class="anchor" href="#starting-kcp-as-a-standalone-process">#</a>
+</h2>
+
+
+
+<blockquote class="book-hint warning">
+<p><strong>Attention</strong>: during these exercises, we&rsquo;ll be making heavy use of environment variables. We will be switching back and forth between clusters, as well as needing access to the binaries we&rsquo;ve set up in the previous chapter. Whenever you see this block, it means we are switching an environment. Make sure you <code>cd</code> into the workshop git repo, and copy-paste the commands to your terminal. Let&rsquo;s give it a try!</p>
+</blockquote>
+
+<div class="book-tabs">
+<input type="radio" class="toggle" name="tabs-0" id="tabs-0-0" checked="checked" />
+<label for="tabs-0-0">Bash/ZSH</label>
+<div class="book-tabs-content markdown-inner">
+<blockquote class="book-hint warning">
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#072">export</span> <span style="color:#036">WORKSHOP_ROOT</span><span style="color:#333">=</span><span style="background-color:#e0e0ff">&#34;</span><span style="color:#289;font-weight:bold">$(</span>git rev-parse --show-toplevel<span style="color:#289;font-weight:bold">)</span><span style="background-color:#e0e0ff">/20250401-kubecon-london/workshop-&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#072">export</span> <span style="color:#036">PATH</span><span style="color:#333">=</span><span style="background-color:#e0e0ff">&#34;</span><span style="background-color:#eee">${</span><span style="color:#036">WORKSHOP_ROOT</span><span style="background-color:#eee">}</span><span style="background-color:#e0e0ff">/bin:</span><span style="background-color:#eee">${</span><span style="color:#036">PATH</span><span style="background-color:#eee">}</span><span style="background-color:#e0e0ff">&#34;</span>
+</span></span></code></pre></div>
+</blockquote>
+</div>
+<input type="radio" class="toggle" name="tabs-0" id="tabs-0-1"  />
+<label for="tabs-0-1">Fish</label>
+<div class="book-tabs-content markdown-inner">
+<blockquote class="book-hint warning">
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fish" data-lang="fish"><span style="display:flex;"><span><span style="color:#289;font-weight:bold">set</span> <span style="color:#036">WORKSHOP_ROOT</span> <span style="color:#333">(</span><span style="color:#5ed;font-weight:bold">git</span> rev-parse <span style="color:#007">--show-toplevel</span><span style="color:#333">)</span>/<span style="color:#60e;font-weight:bold">20250401</span>-kubecon-london/workshop-
+</span></span><span style="display:flex;"><span><span style="color:#289;font-weight:bold">set</span> <span style="color:#036">PATH</span> <span style="color:#036">$WORKSHOP_ROOT</span>/bin <span style="color:#036">$PATH</span>
+</span></span></code></pre></div>
+</blockquote>
+</div>
+</div>
+<p>Starting kcp in standalone mode is as easy as typing <code>kcp start</code> and pressing Enter:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>kcp start
+</span></span></code></pre></div><p>You should see the program running indefinitely, and outputting its logs&ndash;starting with some errors that should clean up in a couple of seconds as the different controllers start up. Leave the terminal window open, as we will keep using this kcp instance throughout the duration of the workshop. In this mode, all kcp&rsquo;s state is in-memory only. That means exiting the process (by, for example, pressing <em>Ctrl+C</em> in this terminal), will lose all its etcd contents.</p>
+<p>Once kcp&rsquo;s output seems stable, we can start making simple kubectl calls against it. <code>kcp start</code> creates a hidden directory <code>.kcp</code>, where it places its kubeconfig and the certificates.</p>
+<p>Open a new terminal now.</p>
+<div class="book-tabs">
+<input type="radio" class="toggle" name="tabs-1" id="tabs-1-0" checked="checked" />
+<label for="tabs-1-0">Bash/ZSH</label>
+<div class="book-tabs-content markdown-inner">
+<blockquote class="book-hint warning">
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#072">export</span> <span style="color:#036">WORKSHOP_ROOT</span><span style="color:#333">=</span><span style="background-color:#e0e0ff">&#34;</span><span style="color:#289;font-weight:bold">$(</span>git rev-parse --show-toplevel<span style="color:#289;font-weight:bold">)</span><span style="background-color:#e0e0ff">/20250401-kubecon-london/workshop-&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#072">export</span> <span style="color:#036">KUBECONFIG</span><span style="color:#333">=</span><span style="background-color:#e0e0ff">&#34;</span><span style="background-color:#eee">${</span><span style="color:#036">workshop_root</span><span style="background-color:#eee">}</span><span style="background-color:#e0e0ff">/.kcp/admin.kubeconfig&#34;</span>
+</span></span></code></pre></div>
+</blockquote>
+</div>
+<input type="radio" class="toggle" name="tabs-1" id="tabs-1-1"  />
+<label for="tabs-1-1">Fish</label>
+<div class="book-tabs-content markdown-inner">
+<blockquote class="book-hint warning">
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fish" data-lang="fish"><span style="display:flex;"><span><span style="color:#289;font-weight:bold">set</span> <span style="color:#036">WORKSHOP_ROOT</span> <span style="color:#333">(</span><span style="color:#5ed;font-weight:bold">git</span> rev-parse <span style="color:#007">--show-toplevel</span><span style="color:#333">)</span>/<span style="color:#60e;font-weight:bold">20250401</span>-kubecon-london/workshop-
+</span></span><span style="display:flex;"><span><span style="color:#289;font-weight:bold">set</span> <span style="color:#036">KUBECONFIG</span> <span style="color:#036">$WORKSHOP_ROOT</span>/.kcp/admin.kubeconfig<span style="background-color:#e0e0ff">&#34;
+</span></span></span></code></pre></div>
+</blockquote>
+</div>
+</div>
+<p>The following command should work now:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell-session" data-lang="shell-session"><span style="display:flex;"><span><span style="color:#c65d09;font-weight:bold">$</span> kubectl version
+</span></span><span style="display:flex;"><span><span style="color:#888">Client Version: v1.32.1
+</span></span></span><span style="display:flex;"><span><span style="color:#888">Kustomize Version: v5.5.0
+</span></span></span><span style="display:flex;"><span><span style="color:#888">Server Version: v1.31.0+kcp-v0.26.1
+</span></span></span></code></pre></div><p>We&rsquo;ll have a couple more kubeconfigs to switch between, and it will be convenient to have them all in one place. Let&rsquo;s do that now:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>mkdir <span style="color:#036">$WORKSHOP_ROOT</span>/kubeconfigs
+</span></span><span style="display:flex;"><span>ln -s <span style="color:#036">$KUBECONFIG</span> <span style="color:#036">$WORKSHOP_ROOT</span>/kubeconfigs
+</span></span></code></pre></div><p>And that&rsquo;s it!</p>
+<hr>
+<h2 id="high-five-">
+  High-five! 🚀🚀🚀
+  <a class="anchor" href="#high-five-">#</a>
+</h2>
+<p>Finished? High-five! Check-in your completion with:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>01-deploy-kcp/99-highfive.sh
+</span></span></code></pre></div><p>If there were no errors, you may continue with the next exercise.</p>
+<h3 id="cheat-sheet">
+  Cheat-sheet
+  <a class="anchor" href="#cheat-sheet">#</a>
+</h3>
+<p>You may fast-forward through this exercise by running:</p>
+<ul>
+<li><code>01-deploy-kcp/01-start-kcp.sh</code> in a new terminal</li>
+</ul>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+
+
+</div>
+
+
+
+  <script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){if(window.getSelection().toString())return;e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
+
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#starting-kcp-as-a-standalone-process">Starting kcp as a standalone process</a></li>
+    <li><a href="#high-five-">High-five! 🚀🚀🚀</a>
+      <ul>
+        <li><a href="#cheat-sheet">Cheat-sheet</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

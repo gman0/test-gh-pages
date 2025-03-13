@@ -1,4 +1,4 @@
-baseURL = 'http://localhost/'
+baseURL = 'https://gman0.github.io/test-gh-pages/'
 languageCode = 'en-us'
 title = 'kcp @ Kubecon 2025 London'
 theme = ['hugo-book']

@@ -4,7 +4,7 @@ title = 'kcp @ Kubecon 2025 London'
 theme = ['hugo-book']
 
 [markup.highlight]
-style = 'murphy'
+style = 'github-dark'
 
 [markup.goldmark.parser.attribute]
 block = true

@@ -2,18 +2,18 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://localhost/docs/00-prerequisites/</loc>
+    <loc>http://localhost:1313/docs/00-prerequisites/</loc>
   </url><url>
-    <loc>http://localhost/docs/01-deploy-kcp/</loc>
+    <loc>http://localhost:1313/docs/01-deploy-kcp/</loc>
   </url><url>
-    <loc>http://localhost/docs/02-explore-workspaces/</loc>
+    <loc>http://localhost:1313/docs/02-explore-workspaces/</loc>
   </url><url>
-    <loc>http://localhost/categories/</loc>
+    <loc>http://localhost:1313/categories/</loc>
   </url><url>
-    <loc>http://localhost/docs/</loc>
+    <loc>http://localhost:1313/docs/</loc>
   </url><url>
-    <loc>http://localhost/</loc>
+    <loc>http://localhost:1313/</loc>
   </url><url>
-    <loc>http://localhost/tags/</loc>
+    <loc>http://localhost:1313/tags/</loc>
   </url>
 </urlset>

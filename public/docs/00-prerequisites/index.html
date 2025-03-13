@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en-us" dir="ltr">
-<head>
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="
@@ -25,7 +25,7 @@ clean-all.sh
 Notice the exercises in directories &lt;Sequence number&gt;-&lt;Exercise name&gt;. These are to be visited in sequence, and to complete one, all previous exercises need to be completed first to bring the system into the desired state. While it&rsquo;s best if you try to follow the tasks by yourself, if you ever get stuck, you can finish an exercise by running the scripts inside the respective exercise directory.">
 <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
 <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
-<meta name="color-scheme" content="light dark"><meta property="og:url" content="http://localhost/docs/00-prerequisites/">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="http://localhost:1313/docs/00-prerequisites/">
   <meta property="og:site_name" content="kcp @ Kubecon 2025 London">
   <meta property="og:title" content="00: Setting up your development environment">
   <meta property="og:description" content="Pre-requisites # In this chapter we’ll set up our workshop-dedicated development environment.
@@ -38,7 +38,7 @@ git clone git@github.com:mjudeikis/kcp-contrib.git Now, let’s see what’s ins
 <title>00: Setting up your development environment | kcp @ Kubecon 2025 London</title>
 <link rel="icon" href="/favicon.png" >
 <link rel="manifest" href="/manifest.json">
-<link rel="canonical" href="http://localhost/docs/00-prerequisites/">
+<link rel="canonical" href="http://localhost:1313/docs/00-prerequisites/">
 <link rel="stylesheet" href="/book.min.434035e7885c7f5d12818bd9f111cf1a0925c6fb78382667381c3d5eda3fb4f1.css" integrity="sha256-Q0A154hcf10SgYvZ8RHPGgklxvt4OCZnOBw9Xto/tPE=" crossorigin="anonymous">
   <script defer src="/fuse.min.js"></script>
   <script defer src="/en.search.min.4bff042756c61d32436b7c73a5e66109836e4c4410210cb96ce108d550ad27b5.js" integrity="sha256-S/8EJ1bGHTJDa3xzpeZhCYNuTEQQIQy5bOEI1VCtJ7U=" crossorigin="anonymous"></script>
@@ -201,7 +201,7 @@ https://github.com/alex-shpak/hugo-book
   <a class="anchor" href="#cloning-the-workshop-repo">#</a>
 </h2>
 <p>Start by cloning the git repository we&rsquo;ll refer to throughout the workshop, and will be the place for the binaries, scripts and kubeconfigs we will create as we move forward.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>git clone git@github.com:mjudeikis/kcp-contrib.git
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>git clone git@github.com:mjudeikis/kcp-contrib.git
 </span></span></code></pre></div><p>Now, let&rsquo;s see what&rsquo;s inside.</p>
 <ul>
 <li><code>00-prerequisites/</code></li>
@@ -226,7 +226,7 @@ https://github.com/alex-shpak/hugo-book
 </ul>
 <p>You may visit the links, download and extract the respective binaries to a new directory called <code>bin/</code> in the workshop&rsquo;s root (e.g., <code>$WORKSHOP/bin/kubectl</code>). If you already have some of these installed and available in your <code>$PATH</code>, you may skip them&ndash;just make sure they are up-to-date.</p>
 <p>Alternatively, we&rsquo;ve prepared a script that does just that:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>00-prerequisites/01-install.sh
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>00-prerequisites/01-install.sh
 </span></span></code></pre></div><p>If you&rsquo;re going the manual way, please make sure the file names are stripped of OS and arch names they may contain (e.g. <code>mv kubectl-krew-linux_amd64 kubectl-krew</code>), as we&rsquo;ll refer to them using their system-agnostic names later on.</p>
 <p>And that&rsquo;s it!</p>
 <hr>
@@ -235,7 +235,7 @@ https://github.com/alex-shpak/hugo-book
   <a class="anchor" href="#high-five-">#</a>
 </h2>
 <p>Done already? High-five! Check-in your completion with:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>00-prerequisites/99-highfive.sh
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>00-prerequisites/99-highfive.sh
 </span></span></code></pre></div><p>If there were no errors, you may continue with the next exercise.</p>
 </article>
  

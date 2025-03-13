@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en-us" dir="ltr">
-<head>
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="
@@ -16,7 +16,7 @@ See Workspaces documentation at docs.kcp.io/kcp/main/concepts/workspaces/.
 Workspaces, or kcp for that matter, is not something that vanilla kubectl knows about. kcp brings support for those using krew plugins. You may remember, we installed kubect-krew in the very first warm-up exercise. Now we need to install the plugins themselves:">
 <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
 <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
-<meta name="color-scheme" content="light dark"><meta property="og:url" content="http://localhost/docs/02-explore-workspaces/">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="http://localhost:1313/docs/02-explore-workspaces/">
   <meta property="og:site_name" content="kcp @ Kubecon 2025 London">
   <meta property="og:title" content="02: Exploring workspaces">
   <meta property="og:description" content="Explore workspaces # Workspaces are one of kcp’s core concepts, and in this exercise we’ll explore what they are and how to work with them.
@@ -28,7 +28,7 @@ Pre-requisites, take two # Workspaces, or kcp for that matter, is not something 
 <title>02: Exploring workspaces | kcp @ Kubecon 2025 London</title>
 <link rel="icon" href="/favicon.png" >
 <link rel="manifest" href="/manifest.json">
-<link rel="canonical" href="http://localhost/docs/02-explore-workspaces/">
+<link rel="canonical" href="http://localhost:1313/docs/02-explore-workspaces/">
 <link rel="stylesheet" href="/book.min.434035e7885c7f5d12818bd9f111cf1a0925c6fb78382667381c3d5eda3fb4f1.css" integrity="sha256-Q0A154hcf10SgYvZ8RHPGgklxvt4OCZnOBw9Xto/tPE=" crossorigin="anonymous">
   <script defer src="/fuse.min.js"></script>
   <script defer src="/en.search.min.4bff042756c61d32436b7c73a5e66109836e4c4410210cb96ce108d550ad27b5.js" integrity="sha256-S/8EJ1bGHTJDa3xzpeZhCYNuTEQQIQy5bOEI1VCtJ7U=" crossorigin="anonymous"></script>
@@ -208,9 +208,9 @@ https://github.com/alex-shpak/hugo-book
 <label for="tabs-0-0">Bash/ZSH</label>
 <div class="book-tabs-content markdown-inner">
 <blockquote class="book-hint warning">
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#072">export</span> <span style="color:#036">WORKSHOP_ROOT</span><span style="color:#333">=</span><span style="background-color:#e0e0ff">&#34;</span><span style="color:#289;font-weight:bold">$(</span>git rev-parse --show-toplevel<span style="color:#289;font-weight:bold">)</span><span style="background-color:#e0e0ff">/20250401-kubecon-london/workshop-&#34;</span>
-</span></span><span style="display:flex;"><span><span style="color:#072">export</span> <span style="color:#036">KREW_ROOT</span><span style="color:#333">=</span><span style="background-color:#e0e0ff">&#34;</span><span style="background-color:#eee">${</span><span style="color:#036">workshop_root</span><span style="background-color:#eee">}</span><span style="background-color:#e0e0ff">/bin/.krew&#34;</span>
-</span></span><span style="display:flex;"><span><span style="color:#072">export</span> <span style="color:#036">PATH</span><span style="color:#333">=</span><span style="background-color:#e0e0ff">&#34;</span><span style="background-color:#eee">${</span><span style="color:#036">WORKSHOP_ROOT</span><span style="background-color:#eee">}</span><span style="background-color:#e0e0ff">/bin/.krew/bin:</span><span style="background-color:#eee">${</span><span style="color:#036">WORKSHOP_ROOT</span><span style="background-color:#eee">}</span><span style="background-color:#e0e0ff">/bin:</span><span style="background-color:#eee">${</span><span style="color:#036">PATH</span><span style="background-color:#eee">}</span><span style="background-color:#e0e0ff">&#34;</span>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>export <span style="color:#79c0ff">WORKSHOP_ROOT</span><span style="color:#ff7b72;font-weight:bold">=</span><span style="color:#a5d6ff">&#34;</span><span style="color:#ff7b72">$(</span>git rev-parse --show-toplevel<span style="color:#ff7b72">)</span><span style="color:#a5d6ff">/20250401-kubecon-london/workshop-&#34;</span>
+</span></span><span style="display:flex;"><span>export <span style="color:#79c0ff">KREW_ROOT</span><span style="color:#ff7b72;font-weight:bold">=</span><span style="color:#a5d6ff">&#34;</span><span style="color:#a5d6ff">${</span><span style="color:#79c0ff">workshop_root</span><span style="color:#a5d6ff">}</span><span style="color:#a5d6ff">/bin/.krew&#34;</span>
+</span></span><span style="display:flex;"><span>export <span style="color:#79c0ff">PATH</span><span style="color:#ff7b72;font-weight:bold">=</span><span style="color:#a5d6ff">&#34;</span><span style="color:#a5d6ff">${</span><span style="color:#79c0ff">WORKSHOP_ROOT</span><span style="color:#a5d6ff">}</span><span style="color:#a5d6ff">/bin/.krew/bin:</span><span style="color:#a5d6ff">${</span><span style="color:#79c0ff">WORKSHOP_ROOT</span><span style="color:#a5d6ff">}</span><span style="color:#a5d6ff">/bin:</span><span style="color:#a5d6ff">${</span><span style="color:#79c0ff">PATH</span><span style="color:#a5d6ff">}</span><span style="color:#a5d6ff">&#34;</span>
 </span></span></code></pre></div>
 </blockquote>
 </div>
@@ -218,35 +218,35 @@ https://github.com/alex-shpak/hugo-book
 <label for="tabs-0-1">Fish</label>
 <div class="book-tabs-content markdown-inner">
 <blockquote class="book-hint warning">
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fish" data-lang="fish"><span style="display:flex;"><span><span style="color:#289;font-weight:bold">set</span> <span style="color:#007">-gx</span> <span style="color:#036">WORKSHOP_ROOT</span> <span style="color:#333">(</span><span style="color:#5ed;font-weight:bold">git</span> rev-parse <span style="color:#007">--show-toplevel</span><span style="color:#333">)</span>/<span style="color:#60e;font-weight:bold">20250401</span>-kubecon-london/workshop-
-</span></span><span style="display:flex;"><span><span style="color:#289;font-weight:bold">set</span> <span style="color:#007">-gx</span> <span style="color:#036">KREW_ROOT</span> <span style="color:#036">$WORKSHOP_ROOT</span>/bin/.krew
-</span></span><span style="display:flex;"><span><span style="color:#289;font-weight:bold">set</span> <span style="color:#007">-gx</span> <span style="color:#036">PATH</span> <span style="color:#036">$WORKSHOP_ROOT</span>/bin/.krew/bin <span style="color:#036">$WORKSHOP_ROOT</span>/bin <span style="color:#036">$PATH</span><span style="background-color:#e0e0ff">&#34;
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fish" data-lang="fish"><span style="display:flex;"><span><span style="color:#ff7b72">set</span> -gx <span style="color:#79c0ff">WORKSHOP_ROOT</span> <span style="color:#ff7b72;font-weight:bold">(</span><span style="color:#d2a8ff;font-weight:bold">git</span> rev-parse --show-toplevel<span style="color:#ff7b72;font-weight:bold">)</span>/<span style="color:#a5d6ff">20250401</span>-kubecon-london/workshop-
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">set</span> -gx <span style="color:#79c0ff">KREW_ROOT</span> <span style="color:#79c0ff">$WORKSHOP_ROOT</span>/bin/.krew
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">set</span> -gx <span style="color:#79c0ff">PATH</span> <span style="color:#79c0ff">$WORKSHOP_ROOT</span>/bin/.krew/bin <span style="color:#79c0ff">$WORKSHOP_ROOT</span>/bin <span style="color:#79c0ff">$PATH</span><span style="color:#a5d6ff">&#34;
 </span></span></span></code></pre></div>
 </blockquote>
 </div>
 </div>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>kubectl krew index add kcp-dev https://github.com/kcp-dev/krew-index.git
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>kubectl krew index add kcp-dev https://github.com/kcp-dev/krew-index.git
 </span></span><span style="display:flex;"><span>kubectl krew install kcp-dev/kcp
 </span></span><span style="display:flex;"><span>kubectl krew install kcp-dev/ws
 </span></span><span style="display:flex;"><span>kubectl krew install kcp-dev/create-workspace
 </span></span></code></pre></div><p>Now you should be able to run and inspect these commands:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell-session" data-lang="shell-session"><span style="display:flex;"><span><span style="color:#c65d09;font-weight:bold">$</span> kubectl create workspace --help
-</span></span><span style="display:flex;"><span><span style="color:#888">Creates a new workspace
-</span></span></span><span style="display:flex;"><span><span style="color:#888"></span><span style="color:#f00;background-color:#faa">
-</span></span></span><span style="display:flex;"><span><span style="color:#f00;background-color:#faa"></span><span style="color:#888">Usage:
-</span></span></span><span style="display:flex;"><span><span style="color:#888">  create [flags]
-</span></span></span><span style="display:flex;"><span><span style="color:#888">...
-</span></span></span><span style="display:flex;"><span><span style="color:#888"></span><span style="color:#f00;background-color:#faa">
-</span></span></span><span style="display:flex;"><span><span style="color:#f00;background-color:#faa"></span><span style="color:#c65d09;font-weight:bold">$</span> kubectl ws --help
-</span></span><span style="display:flex;"><span><span style="color:#888">Manages KCP workspaces
-</span></span></span><span style="display:flex;"><span><span style="color:#888"></span><span style="color:#f00;background-color:#faa">
-</span></span></span><span style="display:flex;"><span><span style="color:#f00;background-color:#faa"></span><span style="color:#888">Usage:
-</span></span></span><span style="display:flex;"><span><span style="color:#888">  workspace [create|create-context|use|current|&lt;workspace&gt;|..|.|-|~|&lt;root:absolute:workspace&gt;] [flags]
-</span></span></span><span style="display:flex;"><span><span style="color:#888">  workspace [command]
-</span></span></span><span style="display:flex;"><span><span style="color:#888">...
-</span></span></span><span style="display:flex;"><span><span style="color:#888"></span><span style="color:#f00;background-color:#faa">
-</span></span></span><span style="display:flex;"><span><span style="color:#f00;background-color:#faa"></span><span style="color:#c65d09;font-weight:bold">$</span> kubectl kcp --help
-</span></span><span style="display:flex;"><span><span style="color:#888">...
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell-session" data-lang="shell-session"><span style="display:flex;"><span><span style="color:#8b949e">$</span> kubectl create workspace --help
+</span></span><span style="display:flex;"><span><span style="color:#8b949e">Creates a new workspace
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e"></span><span style="color:#f85149">
+</span></span></span><span style="display:flex;"><span><span style="color:#f85149"></span><span style="color:#8b949e">Usage:
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e">  create [flags]
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e">...
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e"></span><span style="color:#f85149">
+</span></span></span><span style="display:flex;"><span><span style="color:#f85149"></span><span style="color:#8b949e">$</span> kubectl ws --help
+</span></span><span style="display:flex;"><span><span style="color:#8b949e">Manages KCP workspaces
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e"></span><span style="color:#f85149">
+</span></span></span><span style="display:flex;"><span><span style="color:#f85149"></span><span style="color:#8b949e">Usage:
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e">  workspace [create|create-context|use|current|&lt;workspace&gt;|..|.|-|~|&lt;root:absolute:workspace&gt;] [flags]
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e">  workspace [command]
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e">...
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e"></span><span style="color:#f85149">
+</span></span></span><span style="display:flex;"><span><span style="color:#f85149"></span><span style="color:#8b949e">$</span> kubectl kcp --help
+</span></span><span style="display:flex;"><span><span style="color:#8b949e">...
 </span></span></span></code></pre></div><p>With that, let&rsquo;s create some workspaces!</p>
 <h2 id="sprawling-workspaces">
   Sprawling workspaces
@@ -257,9 +257,9 @@ https://github.com/alex-shpak/hugo-book
 <label for="tabs-1-0">Bash/ZSH</label>
 <div class="book-tabs-content markdown-inner">
 <blockquote class="book-hint warning">
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#072">export</span> <span style="color:#036">WORKSHOP_ROOT</span><span style="color:#333">=</span><span style="background-color:#e0e0ff">&#34;</span><span style="color:#289;font-weight:bold">$(</span>git rev-parse --show-toplevel<span style="color:#289;font-weight:bold">)</span><span style="background-color:#e0e0ff">/20250401-kubecon-london/workshop-&#34;</span>
-</span></span><span style="display:flex;"><span><span style="color:#072">export</span> <span style="color:#036">KREW_ROOT</span><span style="color:#333">=</span><span style="background-color:#e0e0ff">&#34;</span><span style="background-color:#eee">${</span><span style="color:#036">WORKSHOP_ROOT</span><span style="background-color:#eee">}</span><span style="background-color:#e0e0ff">/bin/.krew&#34;</span>
-</span></span><span style="display:flex;"><span><span style="color:#072">export</span> <span style="color:#036">PATH</span><span style="color:#333">=</span><span style="background-color:#e0e0ff">&#34;</span><span style="background-color:#eee">${</span><span style="color:#036">workshop_root</span><span style="background-color:#eee">}</span><span style="background-color:#e0e0ff">/bin/.krew/bin:</span><span style="background-color:#eee">${</span><span style="color:#036">workshop_root</span><span style="background-color:#eee">}</span><span style="background-color:#e0e0ff">/bin:</span><span style="background-color:#eee">${</span><span style="color:#036">PATH</span><span style="background-color:#eee">}</span><span style="background-color:#e0e0ff">&#34;</span>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>export <span style="color:#79c0ff">WORKSHOP_ROOT</span><span style="color:#ff7b72;font-weight:bold">=</span><span style="color:#a5d6ff">&#34;</span><span style="color:#ff7b72">$(</span>git rev-parse --show-toplevel<span style="color:#ff7b72">)</span><span style="color:#a5d6ff">/20250401-kubecon-london/workshop-&#34;</span>
+</span></span><span style="display:flex;"><span>export <span style="color:#79c0ff">KREW_ROOT</span><span style="color:#ff7b72;font-weight:bold">=</span><span style="color:#a5d6ff">&#34;</span><span style="color:#a5d6ff">${</span><span style="color:#79c0ff">WORKSHOP_ROOT</span><span style="color:#a5d6ff">}</span><span style="color:#a5d6ff">/bin/.krew&#34;</span>
+</span></span><span style="display:flex;"><span>export <span style="color:#79c0ff">PATH</span><span style="color:#ff7b72;font-weight:bold">=</span><span style="color:#a5d6ff">&#34;</span><span style="color:#a5d6ff">${</span><span style="color:#79c0ff">workshop_root</span><span style="color:#a5d6ff">}</span><span style="color:#a5d6ff">/bin/.krew/bin:</span><span style="color:#a5d6ff">${</span><span style="color:#79c0ff">workshop_root</span><span style="color:#a5d6ff">}</span><span style="color:#a5d6ff">/bin:</span><span style="color:#a5d6ff">${</span><span style="color:#79c0ff">PATH</span><span style="color:#a5d6ff">}</span><span style="color:#a5d6ff">&#34;</span>
 </span></span></code></pre></div>
 </blockquote>
 </div>
@@ -267,35 +267,35 @@ https://github.com/alex-shpak/hugo-book
 <label for="tabs-1-1">Fish</label>
 <div class="book-tabs-content markdown-inner">
 <blockquote class="book-hint warning">
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fish" data-lang="fish"><span style="display:flex;"><span><span style="color:#289;font-weight:bold">set</span> <span style="color:#007">-gx</span> <span style="color:#036">WORKSHOP_ROOT</span> <span style="color:#333">(</span><span style="color:#5ed;font-weight:bold">git</span> rev-parse <span style="color:#007">--show-toplevel</span><span style="color:#333">)</span>/<span style="color:#60e;font-weight:bold">20250401</span>-kubecon-london/workshop-
-</span></span><span style="display:flex;"><span><span style="color:#289;font-weight:bold">set</span> <span style="color:#007">-gx</span> <span style="color:#036">KREW_ROOT</span> <span style="color:#036">$WORKSHOP_ROOT</span>/bin/.krew
-</span></span><span style="display:flex;"><span><span style="color:#289;font-weight:bold">set</span> <span style="color:#007">-gx</span> <span style="color:#036">PATH</span> <span style="color:#036">$WORKSHOP_ROOT</span>/bin/.krew/bin <span style="color:#036">$WORKSHOP_ROOT</span>/bin <span style="color:#036">$PATH</span><span style="background-color:#e0e0ff">&#34;
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fish" data-lang="fish"><span style="display:flex;"><span><span style="color:#ff7b72">set</span> -gx <span style="color:#79c0ff">WORKSHOP_ROOT</span> <span style="color:#ff7b72;font-weight:bold">(</span><span style="color:#d2a8ff;font-weight:bold">git</span> rev-parse --show-toplevel<span style="color:#ff7b72;font-weight:bold">)</span>/<span style="color:#a5d6ff">20250401</span>-kubecon-london/workshop-
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">set</span> -gx <span style="color:#79c0ff">KREW_ROOT</span> <span style="color:#79c0ff">$WORKSHOP_ROOT</span>/bin/.krew
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">set</span> -gx <span style="color:#79c0ff">PATH</span> <span style="color:#79c0ff">$WORKSHOP_ROOT</span>/bin/.krew/bin <span style="color:#79c0ff">$WORKSHOP_ROOT</span>/bin <span style="color:#79c0ff">$PATH</span><span style="color:#a5d6ff">&#34;
 </span></span></span></code></pre></div>
 </blockquote>
 </div>
 </div>
 <p>We&rsquo;ll be using <code>kubectl create workspace</code> command:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>kubectl create workspace one
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>kubectl create workspace one
 </span></span><span style="display:flex;"><span>kubectl create workspace two
 </span></span><span style="display:flex;"><span>kubectl create workspace three --enter
 </span></span><span style="display:flex;"><span>kubectl create workspace potato
 </span></span></code></pre></div><p>Now, let&rsquo;s list what we&rsquo;ve created:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>kubectl ws use :
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>kubectl ws use :
 </span></span><span style="display:flex;"><span>kubectl get ws
 </span></span></code></pre></div><p>These are the workspaces we created, and they represent logical separation of resources in the cluster.</p>
 <p>We haven&rsquo;t seen <code>ws use</code> yet. Using this command, you move into a different workspace in the tree of workspaces, much like <code>cd</code> moves you into a different directory described by a path. In case of workspaces, a path too may be relative or absolute, where <code>:</code> is the path separator, and <code>:</code> alone denotes the root of the tree.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>kubectl ws use :
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>kubectl ws use :
 </span></span><span style="display:flex;"><span>kubectl ws use one
 </span></span><span style="display:flex;"><span>kubectl get configmap
-</span></span><span style="display:flex;"><span>kubectl create configmap <span style="color:#072">test</span> --from-literal<span style="color:#333">=</span><span style="color:#036">test</span><span style="color:#333">=</span>one
-</span></span><span style="display:flex;"><span>kubectl get configmap <span style="color:#072">test</span> -o json
-</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>kubectl ws use root:two
+</span></span><span style="display:flex;"><span>kubectl create configmap test --from-literal<span style="color:#ff7b72;font-weight:bold">=</span><span style="color:#79c0ff">test</span><span style="color:#ff7b72;font-weight:bold">=</span>one
+</span></span><span style="display:flex;"><span>kubectl get configmap test -o json
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>kubectl ws use root:two
 </span></span><span style="display:flex;"><span>kubectl get configmap
-</span></span><span style="display:flex;"><span>kubectl create configmap <span style="color:#072">test</span> --from-literal<span style="color:#333">=</span><span style="color:#036">test</span><span style="color:#333">=</span>two
-</span></span><span style="display:flex;"><span>kubectl get configmap <span style="color:#072">test</span> -o json
+</span></span><span style="display:flex;"><span>kubectl create configmap test --from-literal<span style="color:#ff7b72;font-weight:bold">=</span><span style="color:#79c0ff">test</span><span style="color:#ff7b72;font-weight:bold">=</span>two
+</span></span><span style="display:flex;"><span>kubectl get configmap test -o json
 </span></span></code></pre></div><p>Notice how even though these two ConfigMaps have the same name <code>test</code>, and are in the same namespace <code>default</code>, they are actually two distinct objects. They live in two different workspaces, and are completely separate.</p>
 <p>We&rsquo;ve created a few workspaces now, and already it&rsquo;s easy to lose sight of what is where. Say hello to <code>ws tree</code>:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>kubectl ws use :
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>kubectl ws use :
 </span></span><span style="display:flex;"><span>kubectl ws tree
 </span></span></code></pre></div><p>You should get output similar to this:</p>
 <pre tabindex="0"><code>.
@@ -316,134 +316,134 @@ https://github.com/alex-shpak/hugo-book
   <a class="anchor" href="#service-provider">#</a>
 </h3>
 <p>Create <code>providers</code> and <code>providers:cowboys</code> workspaces:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>kubectl ws use :
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>kubectl ws use :
 </span></span><span style="display:flex;"><span>kubectl ws create providers --enter
 </span></span><span style="display:flex;"><span>kubectl ws create cowboys --enter
-</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell-session" data-lang="shell-session"><span style="display:flex;"><span><span style="color:#c65d09;font-weight:bold">$</span> kubectl ws use :
-</span></span><span style="display:flex;"><span><span style="color:#888">Current workspace is &#39;root&#39;.
-</span></span></span><span style="display:flex;"><span><span style="color:#888"></span><span style="color:#c65d09;font-weight:bold">$</span> kubectl ws tree
-</span></span><span style="display:flex;"><span><span style="color:#888">.
-</span></span></span><span style="display:flex;"><span><span style="color:#888">└── root
-</span></span></span><span style="display:flex;"><span><span style="color:#888">    ├── one
-</span></span></span><span style="display:flex;"><span><span style="color:#888">    ├── providers
-</span></span></span><span style="display:flex;"><span><span style="color:#888">    │   └── cowboys
-</span></span></span><span style="display:flex;"><span><span style="color:#888">    ├── three
-</span></span></span><span style="display:flex;"><span><span style="color:#888">    │   └── potato
-</span></span></span><span style="display:flex;"><span><span style="color:#888">    └── two
-</span></span></span><span style="display:flex;"><span><span style="color:#888"></span><span style="color:#f00;background-color:#faa">
-</span></span></span><span style="display:flex;"><span><span style="color:#f00;background-color:#faa"></span><span style="color:#c65d09;font-weight:bold">$</span> kubectl ws use :root:providers:cowboys
-</span></span><span style="display:flex;"><span><span style="color:#888">Current workspace is &#39;root:providers:cowboys&#39; (type root:universal).
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell-session" data-lang="shell-session"><span style="display:flex;"><span><span style="color:#8b949e">$</span> kubectl ws use :
+</span></span><span style="display:flex;"><span><span style="color:#8b949e">Current workspace is &#39;root&#39;.
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e"></span><span style="color:#8b949e">$</span> kubectl ws tree
+</span></span><span style="display:flex;"><span><span style="color:#8b949e">.
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e">└── root
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e">    ├── one
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e">    ├── providers
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e">    │   └── cowboys
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e">    ├── three
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e">    │   └── potato
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e">    └── two
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e"></span><span style="color:#f85149">
+</span></span></span><span style="display:flex;"><span><span style="color:#f85149"></span><span style="color:#8b949e">$</span> kubectl ws use :root:providers:cowboys
+</span></span><span style="display:flex;"><span><span style="color:#8b949e">Current workspace is &#39;root:providers:cowboys&#39; (type root:universal).
 </span></span></span></code></pre></div><p>Now that we&rsquo;re in <code>:root:providers:cowboys</code>, let&rsquo;s create an <code>APIResourceSchema</code> and an <code>APIExport</code>. We&rsquo;ll discuss what are they for next.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>kubectl create -f <span style="color:#036">$WORKSHOP_ROOT</span>/02-explore-workspaces/apis/apiresourceschema.yaml
-</span></span><span style="display:flex;"><span>kubectl create -f <span style="color:#036">$WORKSHOP_ROOT</span>/02-explore-workspaces/apis/apiexport.yaml
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>kubectl create -f <span style="color:#79c0ff">$WORKSHOP_ROOT</span>/02-explore-workspaces/apis/apiresourceschema.yaml
+</span></span><span style="display:flex;"><span>kubectl create -f <span style="color:#79c0ff">$WORKSHOP_ROOT</span>/02-explore-workspaces/apis/apiexport.yaml
 </span></span></code></pre></div><p>Starting with the first one, <code>APIResourceSchema</code>:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>kubectl get apiresourceschema -o json
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>kubectl get apiresourceschema -o json
 </span></span></code></pre></div><p>Try to skim through the YAML output and you&rsquo;ll notice that it is almost identical to a definition of a CRD. Unlinke a CRD however, <code>APIResourceSchema</code> instance does not have a backing API server, and instead it simply describes an API that we can pass around and refer to. By decoupling the schema definition from serving, API owners can be more explicit about API evolution.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>kubectl get apiexport cowboys -o yaml
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>kubectl get apiexport cowboys -o yaml
 </span></span></code></pre></div><p>Take a note of the following properties in the output:</p>
 <ul>
 <li><code>.spec.latestResourceSchemas</code>: refers to specific versions of <code>APIResourceSchema</code> objects,</li>
 <li><code>.spec.permissionClaims</code>: describes resource permissions that our API depends on. These are the permissions that we, the service provider, want the consumer to grant us,</li>
 <li><code>.status.virtualWorkspaces[].url</code>: the URL where the provider can access the granted resources.</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#666;font-style:italic"># Stripped down example output of `kubectl get apiexport` command above.</span><span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#070">spec</span>:<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span><span style="color:#070">latestResourceSchemas</span>:<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span>- today.cowboys.wildwest.dev<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span><span style="color:#070">permissionClaims</span>:<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span>- <span style="color:#070">all</span>:<span style="color:#bbb"> </span><span style="color:#289;font-weight:bold">true</span><span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#070">group</span>:<span style="color:#bbb"> </span><span style="background-color:#e0e0ff">&#34;&#34;</span><span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#070">resource</span>:<span style="color:#bbb"> </span>configmaps<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#070">status</span>:<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span><span style="color:#070">virtualWorkspaces</span>:<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span>- <span style="color:#070">url</span>:<span style="color:#bbb"> </span>https://192.168.32.7:6443/services/apiexport/1ctnpog1ny8bnud6/cowboys<span style="color:#bbb">
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Stripped down example output of `kubectl get apiexport` command above.</span><span style="color:#6e7681">
+</span></span></span><span style="display:flex;"><span><span style="color:#6e7681"></span><span style="color:#7ee787">spec</span>:<span style="color:#6e7681">
+</span></span></span><span style="display:flex;"><span><span style="color:#6e7681">  </span><span style="color:#7ee787">latestResourceSchemas</span>:<span style="color:#6e7681">
+</span></span></span><span style="display:flex;"><span><span style="color:#6e7681">  </span>- <span style="color:#a5d6ff">today.cowboys.wildwest.dev</span><span style="color:#6e7681">
+</span></span></span><span style="display:flex;"><span><span style="color:#6e7681">  </span><span style="color:#7ee787">permissionClaims</span>:<span style="color:#6e7681">
+</span></span></span><span style="display:flex;"><span><span style="color:#6e7681">  </span>- <span style="color:#7ee787">all</span>:<span style="color:#6e7681"> </span><span style="color:#79c0ff">true</span><span style="color:#6e7681">
+</span></span></span><span style="display:flex;"><span><span style="color:#6e7681">    </span><span style="color:#7ee787">group</span>:<span style="color:#6e7681"> </span><span style="color:#a5d6ff">&#34;&#34;</span><span style="color:#6e7681">
+</span></span></span><span style="display:flex;"><span><span style="color:#6e7681">    </span><span style="color:#7ee787">resource</span>:<span style="color:#6e7681"> </span><span style="color:#a5d6ff">configmaps</span><span style="color:#6e7681">
+</span></span></span><span style="display:flex;"><span><span style="color:#6e7681"></span><span style="color:#7ee787">status</span>:<span style="color:#6e7681">
+</span></span></span><span style="display:flex;"><span><span style="color:#6e7681">  </span><span style="color:#7ee787">virtualWorkspaces</span>:<span style="color:#6e7681">
+</span></span></span><span style="display:flex;"><span><span style="color:#6e7681">  </span>- <span style="color:#7ee787">url</span>:<span style="color:#6e7681"> </span><span style="color:#a5d6ff">https://192.168.32.7:6443/services/apiexport/1ctnpog1ny8bnud6/cowboys</span><span style="color:#6e7681">
 </span></span></span></code></pre></div><h3 id="service-consumer">
   Service consumer
   <a class="anchor" href="#service-consumer">#</a>
 </h3>
 <p>With the provider in place, let&rsquo;s create two consumers their own workspaces, starting with &ldquo;wild-west&rdquo;:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>kubectl ws use :
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>kubectl ws use :
 </span></span><span style="display:flex;"><span>kubectl create workspace consumers --enter
 </span></span><span style="display:flex;"><span>kubectl create workspace wild-west --enter
-</span></span><span style="display:flex;"><span>kubectl kcp <span style="color:#072">bind</span> apiexport root:providers:cowboys:cowboys --name cowboys-consumer
-</span></span><span style="display:flex;"><span>kubectl create -f <span style="color:#036">$WORKSHOP_ROOT</span>/02-explore-workspaces/apis/consumer-wild-west.yaml
+</span></span><span style="display:flex;"><span>kubectl kcp bind apiexport root:providers:cowboys:cowboys --name cowboys-consumer
+</span></span><span style="display:flex;"><span>kubectl create -f <span style="color:#79c0ff">$WORKSHOP_ROOT</span>/02-explore-workspaces/apis/consumer-wild-west.yaml
 </span></span></code></pre></div><p>Let&rsquo;s check the Cowboy we have created:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell-session" data-lang="shell-session"><span style="display:flex;"><span><span style="color:#c65d09;font-weight:bold">$</span> kubectl get cowboy buckaroo-bill -o json
-</span></span><span style="display:flex;"><span><span style="color:#888">{
-</span></span></span><span style="display:flex;"><span><span style="color:#888">    &#34;apiVersion&#34;: &#34;wildwest.dev/v1alpha1&#34;,
-</span></span></span><span style="display:flex;"><span><span style="color:#888">    &#34;kind&#34;: &#34;Cowboy&#34;,
-</span></span></span><span style="display:flex;"><span><span style="color:#888">    &#34;metadata&#34;: {
-</span></span></span><span style="display:flex;"><span><span style="color:#888">        &#34;annotations&#34;: {
-</span></span></span><span style="display:flex;"><span><span style="color:#888">            &#34;kcp.io/cluster&#34;: &#34;2snrfbp1a3gww1hu&#34;
-</span></span></span><span style="display:flex;"><span><span style="color:#888">        },
-</span></span></span><span style="display:flex;"><span><span style="color:#888">        &#34;creationTimestamp&#34;: &#34;2025-03-12T09:06:53Z&#34;,
-</span></span></span><span style="display:flex;"><span><span style="color:#888">        &#34;generation&#34;: 1,
-</span></span></span><span style="display:flex;"><span><span style="color:#888">        &#34;name&#34;: &#34;buckaroo-bill&#34;,
-</span></span></span><span style="display:flex;"><span><span style="color:#888">        &#34;namespace&#34;: &#34;default&#34;,
-</span></span></span><span style="display:flex;"><span><span style="color:#888">        &#34;resourceVersion&#34;: &#34;3164&#34;,
-</span></span></span><span style="display:flex;"><span><span style="color:#888">        &#34;uid&#34;: &#34;bb6ece46-84bc-4673-a926-f38c486799cf&#34;
-</span></span></span><span style="display:flex;"><span><span style="color:#888">    },
-</span></span></span><span style="display:flex;"><span><span style="color:#888">    &#34;spec&#34;: {
-</span></span></span><span style="display:flex;"><span><span style="color:#888">        &#34;intent&#34;: &#34;Ride and protect the wild west!!!&#34;
-</span></span></span><span style="display:flex;"><span><span style="color:#888">    }
-</span></span></span><span style="display:flex;"><span><span style="color:#888">}
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell-session" data-lang="shell-session"><span style="display:flex;"><span><span style="color:#8b949e">$</span> kubectl get cowboy buckaroo-bill -o json
+</span></span><span style="display:flex;"><span><span style="color:#8b949e">{
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e">    &#34;apiVersion&#34;: &#34;wildwest.dev/v1alpha1&#34;,
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e">    &#34;kind&#34;: &#34;Cowboy&#34;,
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e">    &#34;metadata&#34;: {
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e">        &#34;annotations&#34;: {
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e">            &#34;kcp.io/cluster&#34;: &#34;2snrfbp1a3gww1hu&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e">        },
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e">        &#34;creationTimestamp&#34;: &#34;2025-03-12T09:06:53Z&#34;,
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e">        &#34;generation&#34;: 1,
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e">        &#34;name&#34;: &#34;buckaroo-bill&#34;,
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e">        &#34;namespace&#34;: &#34;default&#34;,
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e">        &#34;resourceVersion&#34;: &#34;3164&#34;,
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e">        &#34;uid&#34;: &#34;bb6ece46-84bc-4673-a926-f38c486799cf&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e">    },
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e">    &#34;spec&#34;: {
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e">        &#34;intent&#34;: &#34;Ride and protect the wild west!!!&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e">    }
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e">}
 </span></span></span></code></pre></div><p>And the second consumer, &ldquo;wild-north&rdquo;:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>kubectl ws use ..
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>kubectl ws use ..
 </span></span><span style="display:flex;"><span>kubectl create workspace wild-north --enter
-</span></span><span style="display:flex;"><span>kubectl kcp <span style="color:#072">bind</span> apiexport root:providers:cowboys:cowboys --name cowboys-consumer
-</span></span><span style="display:flex;"><span>kubectl create -f <span style="color:#036">$WORKSHOP_ROOT</span>/02-explore-workspaces/apis/consumer-wild-north.yaml
-</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell-session" data-lang="shell-session"><span style="display:flex;"><span><span style="color:#c65d09;font-weight:bold">$</span> kubectl get cowboy hold-the-wall -o json
-</span></span><span style="display:flex;"><span><span style="color:#888">{
-</span></span></span><span style="display:flex;"><span><span style="color:#888">    &#34;apiVersion&#34;: &#34;wildwest.dev/v1alpha1&#34;,
-</span></span></span><span style="display:flex;"><span><span style="color:#888">    &#34;kind&#34;: &#34;Cowboy&#34;,
-</span></span></span><span style="display:flex;"><span><span style="color:#888">    &#34;metadata&#34;: {
-</span></span></span><span style="display:flex;"><span><span style="color:#888">        &#34;annotations&#34;: {
-</span></span></span><span style="display:flex;"><span><span style="color:#888">            &#34;kcp.io/cluster&#34;: &#34;30j93qa92345q3tp&#34;
-</span></span></span><span style="display:flex;"><span><span style="color:#888">        },
-</span></span></span><span style="display:flex;"><span><span style="color:#888">        &#34;creationTimestamp&#34;: &#34;2025-03-12T09:09:32Z&#34;,
-</span></span></span><span style="display:flex;"><span><span style="color:#888">        &#34;generation&#34;: 1,
-</span></span></span><span style="display:flex;"><span><span style="color:#888">        &#34;name&#34;: &#34;hold-the-wall&#34;,
-</span></span></span><span style="display:flex;"><span><span style="color:#888">        &#34;namespace&#34;: &#34;default&#34;,
-</span></span></span><span style="display:flex;"><span><span style="color:#888">        &#34;resourceVersion&#34;: &#34;3227&#34;,
-</span></span></span><span style="display:flex;"><span><span style="color:#888">        &#34;uid&#34;: &#34;ff96ab88-b738-4af7-8cc0-3872c424d9df&#34;
-</span></span></span><span style="display:flex;"><span><span style="color:#888">    },
-</span></span></span><span style="display:flex;"><span><span style="color:#888">    &#34;spec&#34;: {
-</span></span></span><span style="display:flex;"><span><span style="color:#888">        &#34;intent&#34;: &#34;North is there the wall is!&#34;
-</span></span></span><span style="display:flex;"><span><span style="color:#888">    }
-</span></span></span><span style="display:flex;"><span><span style="color:#888">}
+</span></span><span style="display:flex;"><span>kubectl kcp bind apiexport root:providers:cowboys:cowboys --name cowboys-consumer
+</span></span><span style="display:flex;"><span>kubectl create -f <span style="color:#79c0ff">$WORKSHOP_ROOT</span>/02-explore-workspaces/apis/consumer-wild-north.yaml
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell-session" data-lang="shell-session"><span style="display:flex;"><span><span style="color:#8b949e">$</span> kubectl get cowboy hold-the-wall -o json
+</span></span><span style="display:flex;"><span><span style="color:#8b949e">{
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e">    &#34;apiVersion&#34;: &#34;wildwest.dev/v1alpha1&#34;,
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e">    &#34;kind&#34;: &#34;Cowboy&#34;,
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e">    &#34;metadata&#34;: {
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e">        &#34;annotations&#34;: {
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e">            &#34;kcp.io/cluster&#34;: &#34;30j93qa92345q3tp&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e">        },
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e">        &#34;creationTimestamp&#34;: &#34;2025-03-12T09:09:32Z&#34;,
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e">        &#34;generation&#34;: 1,
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e">        &#34;name&#34;: &#34;hold-the-wall&#34;,
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e">        &#34;namespace&#34;: &#34;default&#34;,
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e">        &#34;resourceVersion&#34;: &#34;3227&#34;,
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e">        &#34;uid&#34;: &#34;ff96ab88-b738-4af7-8cc0-3872c424d9df&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e">    },
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e">    &#34;spec&#34;: {
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e">        &#34;intent&#34;: &#34;North is there the wall is!&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e">    }
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e">}
 </span></span></span></code></pre></div><p>Great! We have created two instances of a common API, and were able to create a couple of dummy objects with it.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell-session" data-lang="shell-session"><span style="display:flex;"><span><span style="color:#c65d09;font-weight:bold">$</span> kubectl ws use :
-</span></span><span style="display:flex;"><span><span style="color:#888">Current workspace is &#39;root&#39;.
-</span></span></span><span style="display:flex;"><span><span style="color:#888"></span><span style="color:#c65d09;font-weight:bold">$</span> kubectl ws tree
-</span></span><span style="display:flex;"><span><span style="color:#888">.
-</span></span></span><span style="display:flex;"><span><span style="color:#888">└── root
-</span></span></span><span style="display:flex;"><span><span style="color:#888">    ├── consumers
-</span></span></span><span style="display:flex;"><span><span style="color:#888">    │   ├── wild-north
-</span></span></span><span style="display:flex;"><span><span style="color:#888">    │   └── wild-west
-</span></span></span><span style="display:flex;"><span><span style="color:#888">    ├── one
-</span></span></span><span style="display:flex;"><span><span style="color:#888">    ├── providers
-</span></span></span><span style="display:flex;"><span><span style="color:#888">    │   └── cowboys
-</span></span></span><span style="display:flex;"><span><span style="color:#888">    ├── three
-</span></span></span><span style="display:flex;"><span><span style="color:#888">    │   └── potato
-</span></span></span><span style="display:flex;"><span><span style="color:#888">    └── two
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell-session" data-lang="shell-session"><span style="display:flex;"><span><span style="color:#8b949e">$</span> kubectl ws use :
+</span></span><span style="display:flex;"><span><span style="color:#8b949e">Current workspace is &#39;root&#39;.
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e"></span><span style="color:#8b949e">$</span> kubectl ws tree
+</span></span><span style="display:flex;"><span><span style="color:#8b949e">.
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e">└── root
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e">    ├── consumers
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e">    │   ├── wild-north
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e">    │   └── wild-west
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e">    ├── one
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e">    ├── providers
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e">    │   └── cowboys
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e">    ├── three
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e">    │   └── potato
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e">    └── two
 </span></span></span></code></pre></div><h3 id="spec-up-status-down">
   Spec up, status down
   <a class="anchor" href="#spec-up-status-down">#</a>
 </h3>
 <p>We have been moving across namespaces up and down, changing our implied roles. Let&rsquo;s become the service provider again, and see what we can make out from our <code>cowboys</code> APIExport.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>kubectl ws :root:providers:cowboys
-</span></span><span style="display:flex;"><span>kubectl get apiexport cowboys -o json | jq <span style="background-color:#e0e0ff">&#39;.status.virtualWorkspaces[].url&#39;</span>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>kubectl ws :root:providers:cowboys
+</span></span><span style="display:flex;"><span>kubectl get apiexport cowboys -o json | jq <span style="color:#a5d6ff">&#39;.status.virtualWorkspaces[].url&#39;</span>
 </span></span></code></pre></div><p>Using that URL, we can confirm that only the resources we have agreed on are available to the workspaces.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell-session" data-lang="shell-session"><span style="display:flex;"><span><span style="color:#c65d09;font-weight:bold">$</span> kubectl -s <span style="background-color:#e0e0ff">&#39;https://192.168.32.7:6443/services/apiexport/1ctnpog1ny8bnud6/cowboys/clusters/*&#39;</span> api-resources
-</span></span><span style="display:flex;"><span><span style="color:#888">NAME          SHORTNAMES   APIVERSION              NAMESPACED   KIND
-</span></span></span><span style="display:flex;"><span><span style="color:#888">configmaps                 v1                      true         ConfigMap
-</span></span></span><span style="display:flex;"><span><span style="color:#888">apibindings                apis.kcp.io/v1alpha1    false        APIBinding
-</span></span></span><span style="display:flex;"><span><span style="color:#888">cowboys                    wildwest.dev/v1alpha1   true         Cowboy
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell-session" data-lang="shell-session"><span style="display:flex;"><span><span style="color:#8b949e">$</span> kubectl -s <span style="color:#a5d6ff">&#39;https://192.168.32.7:6443/services/apiexport/1ctnpog1ny8bnud6/cowboys/clusters/*&#39;</span> api-resources
+</span></span><span style="display:flex;"><span><span style="color:#8b949e">NAME          SHORTNAMES   APIVERSION              NAMESPACED   KIND
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e">configmaps                 v1                      true         ConfigMap
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e">apibindings                apis.kcp.io/v1alpha1    false        APIBinding
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e">cowboys                    wildwest.dev/v1alpha1   true         Cowboy
 </span></span></span></code></pre></div><p>We can also list all consumers (i.e. workspaces that have relevant <code>APIBinding</code>) for cowboys <code>APIExport</code>:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell-session" data-lang="shell-session"><span style="display:flex;"><span><span style="color:#c65d09;font-weight:bold">$</span> kubectl -s <span style="background-color:#e0e0ff">&#39;https://192.168.32.7:6443/services/apiexport/1ctnpog1ny8bnud6/cowboys/clusters/*&#39;</span> get cowboys -A
-</span></span><span style="display:flex;"><span><span style="color:#888">NAMESPACE   NAME
-</span></span></span><span style="display:flex;"><span><span style="color:#888">default     buckaroo-bill
-</span></span></span><span style="display:flex;"><span><span style="color:#888">default     hold-the-wall
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell-session" data-lang="shell-session"><span style="display:flex;"><span><span style="color:#8b949e">$</span> kubectl -s <span style="color:#a5d6ff">&#39;https://192.168.32.7:6443/services/apiexport/1ctnpog1ny8bnud6/cowboys/clusters/*&#39;</span> get cowboys -A
+</span></span><span style="display:flex;"><span><span style="color:#8b949e">NAMESPACE   NAME
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e">default     buckaroo-bill
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e">default     hold-the-wall
 </span></span></span></code></pre></div><p>You can play around with inspecting the json output of those commands, and try addressing a specific cluster instead of all of them (wildcard <code>*</code>) to get some intuition about how they are wired together.</p>
 <p>From that, you can already start imagining what a workspace-aware controller operating on these objects would look like: being able to observe global state in its workspace subtree, it would watch spec updates from its children (Spec up), and push them state updates (State down). Our basic example is lacking such a controller. But that&rsquo;s something we are going to fix the next exercise, on a more interesting example!</p>
 <hr>
@@ -452,7 +452,7 @@ https://github.com/alex-shpak/hugo-book
   <a class="anchor" href="#high-five-">#</a>
 </h2>
 <p>Finished? High-five! Check-in your completion with:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>../02-explore-workspaces/99-highfive.sh
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>../02-explore-workspaces/99-highfive.sh
 </span></span></code></pre></div><p>If there were no errors, you may continue with the next exercise.</p>
 <h3 id="cheat-sheet">
   Cheat-sheet

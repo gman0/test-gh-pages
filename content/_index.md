@@ -31,4 +31,4 @@ All the tools and services we'll present during this workshop are local, don't r
 
 ## Starting out
 
-Once ready, start by heading over to the first warm-up exercise: [Installing pre-requisites](./00-prerequisites/README.md).
+Once ready, start by heading over to the first warm-up exercise: `00-prerequisites`.

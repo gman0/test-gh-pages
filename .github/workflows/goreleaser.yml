@@ -39,20 +39,9 @@ jobs:
           workdir: 20250401-kubecon-london/workshop/kcp-multicluster-provider-example
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-    
-      - name: Run GoReleaser on pull request
-        if: github.event_name == 'pull_request'
-        uses: goreleaser/goreleaser-action@v6
-        with:
-          distribution: goreleaser
-          version: latest
-          args: release --timeout 60m --snapshot
-          workdir: 20250401-kubecon-london/workshop/kcp-multicluster-provider-example
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-    
+ 
       - uses: actions/upload-artifact@v4
-        if: github.event_name == 'pull_request'
+        if: github.event_name == 'release'
         with:
           name: binaries
           path: dist/*.tar.gz

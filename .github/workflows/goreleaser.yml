@@ -7,7 +7,7 @@ on:
       - 20250401-kubecon-london/workshop/kcp-multicluster-provider-example/.goreleaser.yaml
   push:
     tags:
-      - 'kubecon2025-london'
+      - 'v1-kubecon2025-london'
 
 permissions:
   contents: read
